@@ -1,0 +1,48 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class ColaHeroes {
+    private Queue<Heroe> cola;
+
+    public ColaHeroes() {
+        cola = new LinkedList<>();
+    }
+
+    // R1: Método para encolar 5 héroes
+    public void encolarHeroes() {
+        cola.add(new Heroe()); // Constructor por defecto
+        cola.add(new Heroe("Wolverine", "Mutante", 120, "Regeneración"));
+        cola.add(new Heroe("Iron Man", "Humano", 150, "Tecnología"));
+        cola.add(new Heroe("Thor", "Alienígena", 200, "Vuelo"));
+        cola.add(new Heroe("Jean Grey", "Mutante", 130, "Telepatía"));
+    }
+
+    // R2: Calcular y mostrar nivel de poder total ajustado
+    public void mostrarPoderesTotales() {
+        for (Heroe h : cola) {
+            double poderTotal = h.getNivelPoder();
+            switch (h.getRaza()) {
+                case "Mutante":
+                    poderTotal *= 1.3;
+                    break;
+                case "Alienígena":
+                    poderTotal *= 1.5;
+                    break;
+                // "Humano" no cambia
+            }
+            System.out.println(h.toString() + ", Poder Total Ajustado: " + poderTotal);
+        }
+    }
+
+    public Heroe verPrimero() {
+        return cola.peek();
+    }
+
+    public Heroe quitarHeroe() {
+        return cola.poll();
+    }
+
+    public void agregarHeroe(Heroe heroe) {
+        cola.add(heroe);
+    }
+}
