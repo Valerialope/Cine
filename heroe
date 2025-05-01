@@ -1,0 +1,32 @@
+public class Heroe {
+    private String nombre;
+    private String raza; // "Mutante", "Humano", "Alienígena"
+    private int nivelPoder;
+    private String habilidad; // "Telepatía", "Superfuerza", "Vuelo"
+
+    // Constructor por defecto con datos predefinidos
+    public Heroe() {
+        this.nombre = "NombreDefault";
+        this.raza = "Humano";
+        this.nivelPoder = 100;
+        this.habilidad = "Superfuerza";
+    }
+
+    // Constructor con parámetros
+    public Heroe(String nombre, String raza, int nivelPoder, String habilidad) {
+        this.nombre = nombre;
+        this.raza = raza;
+        this.nivelPoder = nivelPoder;
+        this.habilidad = habilidad;
+    }
+
+    public String getNombre() { return nombre; }
+    public String getRaza() { return raza; }
+    public int getNivelPoder() { return nivelPoder; }
+    public String getHabilidad() { return habilidad; }
+
+    @Override
+    public String toString() {
+        return "Nombre: " + nombre + ", Raza: " + raza + ", NivelPoder: " + nivelPoder + ", Habilidad: " + habilidad;
+    }
+}
